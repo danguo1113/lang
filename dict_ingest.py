@@ -8,18 +8,18 @@ def dict_ingest(path_to_dict):
     adverb = []
     miscel = []
     f = open(path_to_dict,'r')
-    for word in f:
-        if word != None:
-            if en.is_noun(word):
-                noun.append(word)
-            elif en.is_verb(word):
-                verb.append(word)
-            elif en.is_adjective(word):
-                adjective.append(word)
-            elif en.is_adverb(word):
-                adverb.append(word)
-            else:
-                miscel.append(word)
+    for l in f:
+        word = l.strip()
+        if en.is_noun(word):
+            noun.append(word)
+        elif en.is_verb(word):
+            verb.append(word)
+        elif en.is_adjective(word):
+            adjective.append(word)
+        elif en.is_adverb(word):
+            adverb.append(word)
+        else:
+            miscel.append(word)
     print noun[:5]
     print verb[:5]
     print adjective[:5]
