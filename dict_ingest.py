@@ -25,6 +25,12 @@ def dict_ingest(path_to_dict):
     print adjective[:5]
     print adverb[:5]
     print miscel[:5]
+    return noun, verb, adjective, adverb, miscel
+
+def sentence_gen(path_to_dict):
+    noun, verb, adjective, adverb, miscel = dict_ingest(path_to_dict)
+    
+
 
 if __name__ == '__main__':
-    sys.exit(dict_ingest('/usr/share/dict/words'))
+    sys.exit(sentence_gen('/usr/share/dict/words'))
